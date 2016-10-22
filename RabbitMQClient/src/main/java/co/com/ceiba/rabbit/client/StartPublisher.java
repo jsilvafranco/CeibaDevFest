@@ -7,7 +7,7 @@ import co.com.ceiba.rabbit.publisher.PokemonDispatcher;
 public class StartPublisher {
 	
 	
-	private static final int  NUMBER_OF_THREADS = 3;
+	private static final int  NUMBER_OF_THREADS = 10;
 	
 
 	public static void main(String[] args) throws IOException,
@@ -27,7 +27,7 @@ public class StartPublisher {
 			PokemonDispatcher pd = new PokemonDispatcher();
 		
 				try {
-					pd.publishAPokemon(200000);
+					pd.publishAPokemon(500000);
 				} catch (IOException e) {					
 					e.printStackTrace();
 				}

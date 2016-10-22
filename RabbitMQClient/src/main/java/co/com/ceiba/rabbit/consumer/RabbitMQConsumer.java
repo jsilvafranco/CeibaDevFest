@@ -2,18 +2,13 @@ package co.com.ceiba.rabbit.consumer;
 
 import java.io.IOException;
 
-import org.apache.commons.lang3.SerializationUtils;
-
-import co.com.ceiba.rabbit.model.Pokemon;
-
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.QueueingConsumer;
-import com.rabbitmq.client.ShutdownSignalException;
+import com.rabbitmq.client.DefaultConsumer;
 
 
-public abstract class RabbitMQConsumer  extends Thread {	
+public abstract class RabbitMQConsumer  {	
 	/**
 	 * 
 	 */
@@ -23,7 +18,7 @@ public abstract class RabbitMQConsumer  extends Thread {
 	/**
 	 * 
 	 */
-	private QueueingConsumer consumer;
+	private DefaultConsumer consumer;
 	/**
 	 * 
 	 * @param host
@@ -51,38 +46,12 @@ public abstract class RabbitMQConsumer  extends Thread {
 		Connection connection = factory.newConnection();
 		Channel channel = connection.createChannel();		 
 		channel.queueDeclare(queue, false, false, false, null);		
-		consumer = new QueueingConsumer(channel);
+		consumer = new PokemonDefaultConsumer(channel);		
 		channel.basicConsume(queue, true, consumer);
 	}
-	/**
-	 * 
-	 * @throws ShutdownSignalException
-	 * @throws InterruptedException
-	 * @throws IOException 
-	 */
-	private void startListening() throws ShutdownSignalException, InterruptedException, IOException{	
-		System.out.println("Subscriber for queue: "+queue+ " listening started.");
-		while (true) {
-			QueueingConsumer.Delivery delivery = consumer.nextDelivery();			
-				Pokemon message = (Pokemon) SerializationUtils.deserialize(delivery.getBody());
-				if(message.getId() % 100000 == 0){
-					System.out.println("Queue:"+queue+" :: Consumer Tag:" + consumer.getConsumerTag()+" "+message.getName());
-				}
-			}		
-	}
+
 	
-	/**
-	 * 
-	 */
-	@Override
-	public void run(){
-		try {
-			startListening();
-		} catch (ShutdownSignalException | InterruptedException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 	
 	
 	
