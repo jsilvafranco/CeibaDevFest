@@ -1,0 +1,19 @@
+package co.com.ceiba.rabbit.client;
+
+import java.io.IOException;
+
+import co.com.ceiba.rabbit.publisher.PokemonDispatcher;
+
+public class StartPublisher {
+
+	public static void main(String[] args) throws IOException,
+			InterruptedException {
+
+		PokemonDispatcher pd = new PokemonDispatcher();
+
+		for (int j = 0; j < 5; j++) {		
+			pd.publishAPokemon(1000);
+		}
+
+	}
+}

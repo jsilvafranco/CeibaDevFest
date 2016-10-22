@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="org.mockito.Mockito"/>
+<fullyQualifiedTypeName name="com.rabbitmq.client.AMQP.Connection"/>
+<fullyQualifiedTypeName name="com.rabbitmq.client.QueueingConsumer"/>
+<fullyQualifiedTypeName name="com.rabbitmq.client.ConnectionFactory"/>
+<fullyQualifiedTypeName name="com.rabbitmq.client.Channel"/>
+<fullyQualifiedTypeName name="co.com.ceiba.rabbit.model.Pokemon"/>
+<fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
+<fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+<fullyQualifiedTypeName name="com.rabbitmq.client.impl.AMQImpl.Connection"/>
+<fullyQualifiedTypeName name="org.apache.commons.lang3.SerializationUtils"/>
+<fullyQualifiedTypeName name="co.com.ceiba.rabbit.publisher.PokemonDispatcher"/>
+<fullyQualifiedTypeName name="co.com.ceiba.rabbit.consumer.RabbitMQConsumer"/>
+<fullyQualifiedTypeName name="co.com.ceiba.rabbit.consumer.PokemonMaster"/>
+<fullyQualifiedTypeName name="co.com.ceiba.rabbit.consumer.PokemonConsumerFactory"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="co.com.ceiba.rabbit.utils.StringUtils"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="org.apache.kafka.clients.producer.KafkaProducer"/>
+<fullyQualifiedTypeName name="org.apache.kafka.clients.producer.Producer"/>
+<fullyQualifiedTypeName name="org.apache.kafka.clients.producer.ProducerRecord"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="org.apache.kafka.clients.consumer.KafkaConsumer"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="org.apache.kafka.clients.consumer.ConsumerRecords"/>
+<fullyQualifiedTypeName name="org.apache.kafka.clients.consumer.ConsumerRecord"/>
+<fullyQualifiedTypeName name="co.com.ceiba.kafka.utils.KafkaDemoUtils"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="co.com.ceiba.rabbit.client.StartPublisher.PublisherThreadLauncher"/>
+</qualifiedTypeNameHistroy>
