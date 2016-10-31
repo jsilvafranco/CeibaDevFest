@@ -6,6 +6,7 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DefaultConsumer;
+import com.sun.corba.se.pept.broker.Broker;
 
 
 public abstract class RabbitMQConsumer  {	
@@ -47,7 +48,7 @@ public abstract class RabbitMQConsumer  {
 		Channel channel = connection.createChannel();		 
 		channel.queueDeclare(queue, false, false, false, null);		
 		consumer = new PokemonDefaultConsumer(channel);		
-		channel.basicConsume(queue, true, consumer);
+		channel.basicConsume(queue, true, consumer);		
 	}
 
 	

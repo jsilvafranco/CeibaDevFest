@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 7 elements from project &apos;RabbitMQClient&apos;&#x0D;&#x0A;- Original project: &apos;RabbitMQClient&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     classes&#x0D;&#x0A;     dependency-cache&#x0D;&#x0A;     libs&#x0D;&#x0A;     reports&#x0D;&#x0A;     resources&#x0D;&#x0A;     test-results&#x0D;&#x0A;     tmp" description="Delete elements" element1="build/resources" element2="build/tmp" element3="build/dependency-cache" element4="build/test-results" element5="build/classes" element6="build/reports" element7="build/libs" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="7" stamp="1477878869783" subPackages="false" version="1.0"/>
+</session>

@@ -20,7 +20,7 @@ public class PokemonDefaultConsumer extends DefaultConsumer {
 	@Override
 	public void handleDelivery(String consumerTag, Envelope envelope,
 			AMQP.BasicProperties properties, byte[] body) throws IOException {
-		Pokemon message = (Pokemon) SerializationUtils.deserialize(body);
+		Pokemon message = (Pokemon) SerializationUtils.deserialize(body);		
 		if (message.getId() % 100000 == 0) {
 			System.out.println("Queue:" + envelope.getRoutingKey()
 					+ " :: Consumer Tag:" + consumerTag + " "

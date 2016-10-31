@@ -7,7 +7,7 @@ import co.com.ceiba.rabbit.publisher.PokemonDispatcher;
 public class StartPublisher {
 	
 	
-	private static final int  NUMBER_OF_THREADS = 10;
+	private static final int  NUMBER_OF_THREADS = 1;
 	
 
 	public static void main(String[] args) throws IOException,
@@ -25,9 +25,11 @@ public class StartPublisher {
 		@Override
 		public void run() {
 			PokemonDispatcher pd = new PokemonDispatcher();
-		
+		    long init = System.currentTimeMillis();
 				try {
-					pd.publishAPokemon(500000);
+					pd.publishAPokemon(1000000);
+			   long end  = System.currentTimeMillis();
+			   System.out.println("tiempo total: "+ (end -init) + " ms");
 				} catch (IOException e) {					
 					e.printStackTrace();
 				}
