@@ -25,7 +25,7 @@ public class PokemonProducer {
 		Producer<String, String> producer = new KafkaProducer<String, String>(props);
 
 		long init = System.currentTimeMillis();
-		for (int i = 0; i < 1000000; i++) {
+		for (int i = 0; i < 10000000; i++) {
 			producer.send(new ProducerRecord<String, String>(topicName, "K" + Integer.toString(i), "V-" + "Pokemon-" + Integer.toString(i)));
 			if (i > 0 && i % 1000 == 0) {
 				System.out.println("A thousand messages have been sent succesful ");

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.com.ceiba.rabbit.test.PokemonRabbitTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-10-21T21:13:22" hostname="PCEI8TK8FV1" time="0.788">
-  <properties/>
-  <testcase name="buildAshPokemonMaster" classname="co.com.ceiba.rabbit.test.PokemonRabbitTest" time="0.454"/>
-  <testcase name="buildRandomPokemonMaster" classname="co.com.ceiba.rabbit.test.PokemonRabbitTest" time="0.333"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

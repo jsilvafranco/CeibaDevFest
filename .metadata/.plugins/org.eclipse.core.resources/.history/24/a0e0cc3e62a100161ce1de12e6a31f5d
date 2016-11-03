@@ -1,0 +1,10 @@
+package co.com.ceiba.rabbit.consumer;
+
+public class FanoutConsumer extends RabbitMQConsumer {
+
+	public FanoutConsumer(String host, String port, String queue) {
+		super(host, port, queue);
+		// TODO Auto-generated constructor stub
+	}
+
+}

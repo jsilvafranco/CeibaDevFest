@@ -1,7 +1,0 @@
-package co.com.ceiba.rabbit.consumer;
-
-import com.rabbitmq.client.DefaultConsumer;
-
-public class PokemonDefaultConsumer extends DefaultConsumer {
-
-}

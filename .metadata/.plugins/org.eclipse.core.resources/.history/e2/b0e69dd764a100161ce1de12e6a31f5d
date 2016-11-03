@@ -1,0 +1,25 @@
+package co.com.ceiba.rabbit.utils;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+public class SetupConstants {
+
+	private static Properties setupConstants;
+	
+	
+	private void loadConfiguration(){
+		try {
+			InputStream is = getClass().getClassLoader().getResourceAsStream("settings.properties");	
+			setupConstants = new Properties();
+			setupConstants.load(is);
+		} catch (FileNotFoundException e) {			
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.exit(0);
+		}
+		
+	}
+}

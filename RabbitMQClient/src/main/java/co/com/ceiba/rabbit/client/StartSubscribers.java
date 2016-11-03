@@ -9,6 +9,10 @@ public class StartSubscribers {
 		PokemonConsumerFactory.getInstance().createPokemonMaster(StringUtils.QUEUE_POKEMON1);
 		PokemonConsumerFactory.getInstance().createPokemonMaster(StringUtils.QUEUE_POKEMON2);
 		PokemonConsumerFactory.getInstance().createPokemonMaster(StringUtils.QUEUE_POKEMON3);
+		
+//		PokemonConsumerFactory.getInstance().createFanOutConsumer(StringUtils.QUEUE_POKEMON1);
+//		PokemonConsumerFactory.getInstance().createFanOutConsumer(StringUtils.QUEUE_POKEMON2);
+//		PokemonConsumerFactory.getInstance().createFanOutConsumer(StringUtils.QUEUE_POKEMON3);
 	}
 
 }

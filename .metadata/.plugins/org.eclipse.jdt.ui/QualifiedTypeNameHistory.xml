@@ -40,5 +40,8 @@
 <fullyQualifiedTypeName name="com.rabbitmq.client.DefaultConsumer"/>
 <fullyQualifiedTypeName name="co.com.ceiba.rabbit.consumer.PokemonDefaultConsumer"/>
 <fullyQualifiedTypeName name="com.sun.corba.se.pept.broker.Broker"/>
+<fullyQualifiedTypeName name="org.apache.kafka.common.errors.WakeupException"/>
+<fullyQualifiedTypeName name="org.apache.kafka.clients.consumer.OffsetCommitCallback"/>
+<fullyQualifiedTypeName name="org.apache.kafka.clients.consumer.OffsetAndMetadata"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

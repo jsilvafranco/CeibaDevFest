@@ -1,11 +1,15 @@
 package co.com.ceiba.kafka.consumer;
 
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Properties;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.clients.consumer.OffsetAndMetadata;
+import org.apache.kafka.clients.consumer.OffsetCommitCallback;
+import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.errors.WakeupException;
 
 import co.com.ceiba.kafka.utils.KafkaDemoUtils;
@@ -21,6 +25,18 @@ public class PokemonConsumer {
 	      
 	      //Kafka Consumer subscribes list of topics here.
 	      consumer.subscribe(Arrays.asList(topicName));
+	      consumer.commitAsync(new OffsetCommitCallback() {
+			
+			@Override
+			public void onComplete(Map<TopicPartition, OffsetAndMetadata> offsets, Exception exception) {
+				if(!offsets.isEmpty()){
+					for(OffsetAndMetadata osm : offsets.values()){
+						System.out.println("process completed: offset="+osm.offset()+"--->"+osm.metadata());
+					}
+				}
+				
+			}
+		});
 	      
 	      //print the topic name
 	      System.out.println("Subscribed to topic " + topicName);

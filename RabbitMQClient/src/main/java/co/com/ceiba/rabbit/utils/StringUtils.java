@@ -3,9 +3,9 @@ package co.com.ceiba.rabbit.utils;
 public  class StringUtils {
 	
 	
-	public static final String QUEUE_POKEMON1 = "PokemonQ1";
-	public static final String QUEUE_POKEMON2 = "PokemonQ2";
-	public static final String QUEUE_POKEMON3 = "PokemonQ3";
+	public static final String QUEUE_POKEMON1 = "Europe";
+	public static final String QUEUE_POKEMON2 = "Asia";
+	public static final String QUEUE_POKEMON3 = "America";
 
 	/**
 	 * 
