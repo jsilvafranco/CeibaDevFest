@@ -1,0 +1,2 @@
+include ":PokemonModel"
+project(':PokemonModel').projectDir = new File(settingsDir, '../PokemonModel')

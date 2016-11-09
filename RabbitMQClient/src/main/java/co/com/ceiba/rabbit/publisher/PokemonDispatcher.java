@@ -4,9 +4,9 @@ import java.io.IOException;
 
 import org.apache.commons.lang3.SerializationUtils;
 
-import co.com.ceiba.rabbit.model.Pokemon;
-import co.com.ceiba.rabbit.utils.SetupConstants;
-import co.com.ceiba.rabbit.utils.StringUtils;
+import co.com.ceiba.pokemon.model.Pokemon;
+import co.com.ceiba.utils.SetupConstants;
+import co.com.ceiba.utils.StringUtils;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

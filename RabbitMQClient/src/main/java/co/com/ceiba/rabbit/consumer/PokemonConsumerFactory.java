@@ -1,6 +1,6 @@
 package co.com.ceiba.rabbit.consumer;
 
-import co.com.ceiba.rabbit.utils.SetupConstants;
+import co.com.ceiba.utils.SetupConstants;
 
 /**
  * 

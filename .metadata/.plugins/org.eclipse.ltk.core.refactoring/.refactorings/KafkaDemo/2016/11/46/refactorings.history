@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract constant &apos;TOTAL_OF_MESSAGES&apos; from expression &apos;10000000&apos;&#x0D;&#x0A;- Original project: &apos;KafkaDemo&apos;&#x0D;&#x0A;- Constant name: &apos;TOTAL_OF_MESSAGES&apos;&#x0D;&#x0A;- Constant expression: &apos;10000000&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" description="Extract constant &apos;TOTAL_OF_MESSAGES&apos;" flags="786432" id="org.eclipse.jdt.ui.extract.constant" input="/src\/main\/java&lt;co.com.ceiba.kafka.producer{PokemonProducer.java" name="TOTAL_OF_MESSAGES" qualify="false" replace="false" selection="703 8" stamp="1478651915444" version="1.0" visibility="2"/>
+</session>

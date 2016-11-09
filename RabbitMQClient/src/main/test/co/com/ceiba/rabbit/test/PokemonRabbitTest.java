@@ -7,7 +7,7 @@ import org.mockito.Mockito;
 
 import co.com.ceiba.rabbit.consumer.PokemonConsumerFactory;
 import co.com.ceiba.rabbit.consumer.PokemonMaster;
-import co.com.ceiba.rabbit.utils.StringUtils;
+import co.com.ceiba.utils.StringUtils;
 
 public class PokemonRabbitTest {
 	@Test

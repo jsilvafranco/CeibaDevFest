@@ -1,0 +1,56 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+compile group: 'com.rabbitmq', name: 'amqp-client', version: '2.3.1'
+compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+compile project(':PokemonModel').projectDir = new File(settingsDir, '../PokemonModel')
+testCompile 'junit:junit:4.8.2'
+testCompile "org.mockito:mockito-core:1.+" 
+}
+
+sourceSets {
+	main {	
+				
+		resources {
+			srcDir 'src/main/java'
+		}
+		
+		resources {
+			srcDir 'src/main/resources'
+		}
+	}
+	
+	
+	test {
+		java {
+			srcDir 'src/main/test'
+		}
+	}
+}
+
+version = '1.0'
+
+jar {
+    manifest.attributes provider: 'Ceiba DevFest'
+}
+
+task fatJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'Ceiba RabbitMQ Demo',
+        	'Implementation-Version': version,
+        	'Main-Class': 'co.com.ceiba.rabbit.client.StartPublisher'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+
+

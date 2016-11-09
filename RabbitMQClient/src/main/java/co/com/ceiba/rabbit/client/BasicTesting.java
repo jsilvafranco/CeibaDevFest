@@ -1,6 +1,6 @@
 package co.com.ceiba.rabbit.client;
 
-import co.com.ceiba.rabbit.utils.StringUtils;
+import co.com.ceiba.utils.StringUtils;
 
 public class BasicTesting {
 

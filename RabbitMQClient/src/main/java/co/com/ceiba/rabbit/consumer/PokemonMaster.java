@@ -9,8 +9,8 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
-import co.com.ceiba.rabbit.model.Pokemon;
-import co.com.ceiba.rabbit.utils.SetupConstants;
+import co.com.ceiba.pokemon.model.Pokemon;
+import co.com.ceiba.utils.SetupConstants;
 /**
  * 
  * @author jairsifr
