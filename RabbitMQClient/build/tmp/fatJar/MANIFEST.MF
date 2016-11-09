@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: Ceiba RabbitMQ Demo
-Implementation-Version: 1.0
-Main-Class: co.com.ceiba.rabbit.client.StartPublisher
-
