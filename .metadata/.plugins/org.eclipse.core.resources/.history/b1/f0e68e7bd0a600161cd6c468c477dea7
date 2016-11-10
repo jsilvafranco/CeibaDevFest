@@ -1,0 +1,19 @@
+package co.com.ceiba.utils;
+
+import java.util.Random;
+
+public  class StringUtils {
+	
+	
+	public static final String[] QUEUE_POKEMONS = {"Europe","Asia","America"};
+	
+
+	/**
+	 * 
+	 * @return
+	 */
+	public static final String getRandomQueue() {		
+		return (QUEUE_POKEMONS[new Random().nextInt(QUEUE_POKEMONS.length)]);
+
+	}
+}

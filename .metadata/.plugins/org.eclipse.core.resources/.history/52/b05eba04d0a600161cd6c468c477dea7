@@ -1,0 +1,26 @@
+package co.com.ceiba.utils;
+
+public  class StringUtils {
+	
+	
+	public static final String[] QUEUE_POKEMONS = {"Europe","Asia","America"};
+	
+
+	/**
+	 * 
+	 * @return
+	 */
+	public static final String getRandomQueue() {		
+		
+		 double var = Math.random();
+		 if (var >= 0.7f) {
+		 return QUEUE_POKEMON1;
+		 }
+		 if (var <= 0.4f) {
+		 return QUEUE_POKEMON2;
+		 } else {
+		 return QUEUE_POKEMON3;
+		 }
+
+	}
+}

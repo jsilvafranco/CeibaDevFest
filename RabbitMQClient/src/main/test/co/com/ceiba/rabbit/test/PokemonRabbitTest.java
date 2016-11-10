@@ -12,7 +12,7 @@ import co.com.ceiba.utils.StringUtils;
 public class PokemonRabbitTest {
 	@Test
 	public void buildRandomPokemonMaster() {
-		PokemonMaster pm = PokemonConsumerFactory.getInstance().createPokemonMaster(StringUtils.QUEUE_POKEMON1);
+		PokemonMaster pm = PokemonConsumerFactory.getInstance().createPokemonMaster(StringUtils.QUEUE_POKEMONS[0]);
 		assertEquals(pm.getHost(), "localhost");
 	}
 

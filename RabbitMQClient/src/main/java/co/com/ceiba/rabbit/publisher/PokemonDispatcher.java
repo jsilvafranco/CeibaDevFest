@@ -21,9 +21,8 @@ public class PokemonDispatcher {
 	    Channel channel = createChannel(connection);	
 	    for (int i = 0; i < quantity; i++) {	
 	    	//first param is the exchange. "" means direct.
-	    	String qName = StringUtils.getRandomQueue();
-	    	
-	      channel.basicPublish("",qName, null,SerializationUtils.serialize(getPokemon(qName,i)));	   
+	    	String qName = StringUtils.getRandomQueue();	    	
+	      channel.basicPublish("",qName, null,SerializationUtils.serialize(getPokemon(StringUtils.getRandomPokemon(),i)));	   
 	    }
 	    System.out.println("Publisher Done.");
 	    channel.close();
@@ -36,7 +35,7 @@ public class PokemonDispatcher {
 	    Channel channel = createChannel(connection);
 	    channel.exchangeDeclare("fanoutExchange", "fanout");
 	    for (int i = 0; i < quantity; i++) {
-	      channel.basicPublish("fanoutExchange","", null,SerializationUtils.serialize(getPokemon("Charizard",i)));	   
+	      channel.basicPublish("fanoutExchange","", null,SerializationUtils.serialize(getPokemon(StringUtils.getRandomPokemon(),i)));	   
 	    }
 	    System.out.println("Publisher Done.");
 	    channel.close();
@@ -55,16 +54,16 @@ public class PokemonDispatcher {
 
 	private Channel createChannel(Connection connection) throws IOException {
 		Channel channel = connection.createChannel();
-	    channel.queueDeclare(StringUtils.QUEUE_POKEMON1, false, false, false, null);
-	    channel.queueDeclare(StringUtils.QUEUE_POKEMON2, false, false, false, null);	
-	    channel.queueDeclare(StringUtils.QUEUE_POKEMON3, false, false, false, null);
+		for (int i = 0; i < StringUtils.QUEUE_POKEMONS.length; i++) {
+			 channel.queueDeclare(StringUtils.QUEUE_POKEMONS[i], false, false, false, null);
+		}	   
 		return channel;
 	}
 	
-	private static Pokemon getPokemon(String nameSufix, int i){
+	private static Pokemon getPokemon(String name, int i){
 		Pokemon p = new Pokemon();
 		p.setId(i);
-		p.setName("poke"+i+"-"+nameSufix);
+		p.setName(name);
 		p.setAge(String.valueOf(Math.random()*i));
 		p.setWeight(String.valueOf(Math.random()*i));
 		p.setPicUrl(i+".png");

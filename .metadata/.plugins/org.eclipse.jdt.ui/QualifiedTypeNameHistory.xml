@@ -47,4 +47,5 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="co.com.ceiba.rabbit.utils.SetupConstants"/>
 <fullyQualifiedTypeName name="co.com.ceiba.kafka.utils.KafkaDemoUtils"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>

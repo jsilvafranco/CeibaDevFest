@@ -1,0 +1,17 @@
+package co.com.ceiba.utils;
+
+public  class StringUtils {
+	
+	
+	public static final String[] QUEUE_POKEMONS = {"Europe","Asia","America"};
+	
+
+	/**
+	 * 
+	 * @return
+	 */
+	public static final String getRandomQueue() {		
+		return QUEUE_POKEMONS[Integer.valueOf(3*Math.random())];
+
+	}
+}

@@ -8,13 +8,14 @@ public class StartSubscribers {
 	public static void main(String[] args) {
 
 		if (args.length > 0 && args[0].equals("fanout")) {
-			PokemonConsumerFactory.getInstance().createFanOutConsumer(StringUtils.QUEUE_POKEMON1);
-			PokemonConsumerFactory.getInstance().createFanOutConsumer(StringUtils.QUEUE_POKEMON2);
-			PokemonConsumerFactory.getInstance().createFanOutConsumer(StringUtils.QUEUE_POKEMON3);
+			for (int i = 0; i < StringUtils.QUEUE_POKEMONS.length; i++) {
+				PokemonConsumerFactory.getInstance().createFanOutConsumer(StringUtils.QUEUE_POKEMONS[i]);
+			}
+
 		} else {
-			PokemonConsumerFactory.getInstance().createPokemonMaster(StringUtils.QUEUE_POKEMON1);
-			PokemonConsumerFactory.getInstance().createPokemonMaster(StringUtils.QUEUE_POKEMON2);
-			PokemonConsumerFactory.getInstance().createPokemonMaster(StringUtils.QUEUE_POKEMON3);
+			for (int i = 0; i < StringUtils.QUEUE_POKEMONS.length; i++) {
+				PokemonConsumerFactory.getInstance().createPokemonMaster(StringUtils.QUEUE_POKEMONS[i]);
+			}
 		}
 
 	}

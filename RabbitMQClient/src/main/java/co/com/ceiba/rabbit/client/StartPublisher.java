@@ -6,8 +6,8 @@ import co.com.ceiba.rabbit.publisher.PokemonDispatcher;
 
 public class StartPublisher {
 
-	private static final int NUMBER_OF_THREADS = 1;
-	private static final int NUMBER_OF_MESSAGES = 20000;
+	private static final int NUMBER_OF_THREADS = 2;
+	private static final int NUMBER_OF_MESSAGES = 500000;
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		String type = "";
@@ -41,7 +41,7 @@ public class StartPublisher {
 					pd.publishPokemons(NUMBER_OF_MESSAGES);
 				}
 				long end = System.currentTimeMillis();
-				System.out.println("total messages sent:" + NUMBER_OF_MESSAGES);
+				System.out.println(Thread.currentThread().getName() +"-> total messages sent:" + NUMBER_OF_MESSAGES);
 				System.out.println("total time: " + (end - init) + " ms");
 			} catch (IOException e) {
 				e.printStackTrace();
