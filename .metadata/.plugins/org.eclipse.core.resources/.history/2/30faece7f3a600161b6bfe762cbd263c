@@ -7,7 +7,6 @@ import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
 import co.com.ceiba.kafka.utils.KafkaDemoUtils;
-import co.com.ceiba.utils.StringUtils;
 
 public class PokemonProducer {
 
@@ -27,7 +26,7 @@ public class PokemonProducer {
 		long init = System.currentTimeMillis();
 		try {
 			for (int i = 0; i < TOTAL_OF_MESSAGES; i++) {
-				producer.send(new ProducerRecord<String, String>(KafkaDemoUtils.TOPIC_NAME,StringUtils.getRandomPokemon()));
+				producer.send(new ProducerRecord<String, String>(KafkaDemoUtils.TOPIC_NAME, "I'm a Pokemon"));
 				producer.flush();
 				if (i > 0 && i % 1000 == 0) {
 					System.out.println("A thousand messages have been sent succesful ");
