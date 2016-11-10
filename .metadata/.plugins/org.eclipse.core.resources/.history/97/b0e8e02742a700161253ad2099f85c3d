@@ -1,0 +1,72 @@
+package co.com.ceiba.kafka.producer;
+
+import java.util.Properties;
+
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+
+import co.com.ceiba.kafka.utils.KafkaDemoUtils;
+import co.com.ceiba.utils.StringUtils;
+
+public class PokemonProducer {
+
+	private static final int TOTAL_OF_MESSAGES = 1000000;
+
+	public static void main(String[] args) {
+		startKafkaProducer();
+	}
+
+	private static void startKafkaProducer() {
+
+		// create instance for properties to access producer configs
+		Properties props = getBrokerProps();
+
+		Producer<String, String> producer = new KafkaProducer<String, String>(props);
+
+		long init = System.currentTimeMillis();
+		try {
+			for (int i = 0; i < TOTAL_OF_MESSAGES; i++) {
+				producer.send(new ProducerRecord<String, String>(KafkaDemoUtils.TOPIC_NAME,StringUtils.getRandomPokemon()));
+				
+				if (i > 0 && i % 10000 == 0) {
+					System.out.println("10000 messages have been sent succesful ");
+					producer.flush();
+				}
+			}
+			long end = System.currentTimeMillis();
+			System.out.println("tiempo total: " + (end - init) + " ms");
+		} finally {
+			producer.close();
+		}
+	}
+
+	private static Properties getBrokerProps() {
+		Properties props = new Properties();
+
+		props.put("producer.type", "async");
+		// Assign localhost id
+		props.put("bootstrap.servers", "localhost:9092");
+
+		// Set acknowledgements for producer requests.
+		props.put("acks", "all");
+
+		// If the request fails, the producer can automatically retry,
+		props.put("retries", Integer.valueOf(0));
+
+		// Specify buffer size in config
+		props.put("batch.size", Integer.valueOf(16384));
+
+		// Reduce the no of requests less than 0
+		props.put("linger.ms", Integer.valueOf(1));
+
+		// The buffer.memory controls the total amount of memory available to
+		// the producer for buffering.
+		props.put("buffer.memory", Long.valueOf(33554432));
+
+		props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+
+		props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+		return props;
+	}
+}

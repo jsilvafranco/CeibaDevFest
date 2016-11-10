@@ -48,4 +48,5 @@
 <fullyQualifiedTypeName name="co.com.ceiba.rabbit.utils.SetupConstants"/>
 <fullyQualifiedTypeName name="co.com.ceiba.kafka.utils.KafkaDemoUtils"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="co.com.ceiba.utils.StringUtils"/>
 </qualifiedTypeNameHistroy>

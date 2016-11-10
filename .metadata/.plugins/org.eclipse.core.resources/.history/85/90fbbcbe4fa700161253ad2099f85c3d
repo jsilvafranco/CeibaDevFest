@@ -1,0 +1,5 @@
+package co.com.ceiba.kafka.consumer;
+
+public class PokemonConsumerImpl {
+
+}

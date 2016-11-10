@@ -11,10 +11,26 @@ import co.com.ceiba.utils.StringUtils;
 
 public class PokemonProducer {
 
-	private static final int TOTAL_OF_MESSAGES = 100000;
+	private static final int TOTAL_OF_MESSAGES = 500000;
+	private static final int NUMBER_OF_THREADS = 3;
 
 	public static void main(String[] args) {
-		startKafkaProducer();
+		for (int i = 1; i <= NUMBER_OF_THREADS; i++) {
+			Thread t = new Thread(new KafkaProducerThread());
+			t.setName("KafkaPokemonPublisherThread" + i);
+			t.start();
+		}
+	}
+	
+	
+	private static class KafkaProducerThread implements Runnable {
+
+		@Override
+		public void run() {
+			startKafkaProducer();
+			
+		}
+		
 	}
 
 	private static void startKafkaProducer() {
@@ -26,16 +42,19 @@ public class PokemonProducer {
 
 		long init = System.currentTimeMillis();
 		try {
-			for (int i = 0; i < TOTAL_OF_MESSAGES; i++) {
+			int i = 0;
+			for (i=0; i < TOTAL_OF_MESSAGES; i++) {
 				producer.send(new ProducerRecord<String, String>(KafkaDemoUtils.TOPIC_NAME,StringUtils.getRandomPokemon()));
-				producer.flush();
-				if (i > 0 && i % 1000 == 0) {
-					System.out.println("A thousand messages have been sent succesful ");
+				
+				if (i > 0 && i % 10000 == 0) {
+					System.out.println("10000 messages have been sent succesful ");
+					producer.flush();
 				}
 			}
 			long end = System.currentTimeMillis();
-			System.out.println("tiempo total: " + (end - init) + " ms");
+			System.out.println("total sent: "+i+" Total time: " + (end - init) + " ms");
 		} finally {
+			System.out.println("Producer "+Thread.currentThread().getName()+" Ended: ");
 			producer.close();
 		}
 	}

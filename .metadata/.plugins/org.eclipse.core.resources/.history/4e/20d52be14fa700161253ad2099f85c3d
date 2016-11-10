@@ -1,0 +1,35 @@
+package co.com.ceiba.kafka.consumer;
+
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Properties;
+
+import javax.lang.model.type.DeclaredType;
+
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.clients.consumer.OffsetAndMetadata;
+import org.apache.kafka.clients.consumer.OffsetCommitCallback;
+import org.apache.kafka.common.TopicPartition;
+import org.apache.kafka.common.errors.WakeupException;
+
+import co.com.ceiba.kafka.utils.KafkaDemoUtils;
+
+public class PokemonConsumerClient {
+	
+	
+	  
+	public static void main(String[] args) throws Exception {
+	     
+	    PokemonConsumerImpl pk= new PokemonConsumerImpl();  
+		pk.declareConsumer();
+		pk.startConsuming();
+		pk.shutDown();
+	     
+	     
+	   }
+	
+	
+
+}
