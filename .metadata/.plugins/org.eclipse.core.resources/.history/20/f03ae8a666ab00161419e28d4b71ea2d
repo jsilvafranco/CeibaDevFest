@@ -1,0 +1,37 @@
+package co.com.ceiba.kafka.consumer;
+
+import co.com.ceiba.kafka.producer.PokemonProducer.KafkaProducerThread;
+
+
+public class PokemonConsumerClient {
+	
+	private static final int NUMBER_OF_THREADS = 3;
+	
+	  
+	public static void main(String[] args) throws Exception {
+		
+		for (int i = 1; i <= NUMBER_OF_THREADS; i++) {
+			Thread t = new Thread(new KafkaConsumerThread());
+			t.setName("KafkaPokemonPublisherThread" + i);
+			t.start();
+		}
+
+	
+
+	}
+	
+	private static class KafkaConsumerThread implements Runnable {
+
+		@Override
+		public void run() {
+			PokemonConsumerImpl pk = new PokemonConsumerImpl();
+			pk.declareConsumer();
+			pk.startConsuming();
+			pk.shutDown();			
+		}
+		
+	}
+	
+	
+
+}

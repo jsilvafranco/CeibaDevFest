@@ -22,7 +22,7 @@ public class FanoutConsumer extends RabbitMQConsumer {
 		Channel channel = connection.createChannel();
 		channel.exchangeDeclare("fanoutExchange", "fanout");
 		//exclusive = true
-		channel.queueDeclare(queue, false, false, false, null);
+		channel.queueDeclare(queue, true, false, false, null);
 		channel.queueBind(queue, "fanoutExchange","");
 		consumer = new PokemonDefaultConsumer(channel);
 		System.out.println("new Consumer created for consumer tag: "+consumer.getConsumerTag());

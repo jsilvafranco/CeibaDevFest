@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract constant &apos;KAFKA_BROKER&apos; from expression &apos;&quot;192.168.53.116:9092&quot;&apos;&#x0D;&#x0A;- Original project: &apos;KafkaDemo&apos;&#x0D;&#x0A;- Constant name: &apos;KAFKA_BROKER&apos;&#x0D;&#x0A;- Constant expression: &apos;&quot;192.168.53.116:9092&quot;&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;&#x0D;&#x0A;- Replace occurrences of expression with constant" description="Extract constant &apos;KAFKA_BROKER&apos;" flags="786432" id="org.eclipse.jdt.ui.extract.constant" input="/src\/main\/java&lt;co.com.ceiba.kafka.producer{PokemonProducer.java" name="KAFKA_BROKER" qualify="false" replace="true" selection="1898 21" stamp="1479217394938" version="1.0" visibility="2"/>
+</session>

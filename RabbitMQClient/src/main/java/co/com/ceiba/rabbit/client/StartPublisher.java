@@ -6,8 +6,8 @@ import co.com.ceiba.rabbit.publisher.PokemonDispatcher;
 
 public class StartPublisher {
 
-	private static final int NUMBER_OF_THREADS = 2;
-	private static final int NUMBER_OF_MESSAGES = 500000;
+	private static final int NUMBER_OF_THREADS = 1;
+	private static final int NUMBER_OF_MESSAGES = 333333;
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		String type = "";

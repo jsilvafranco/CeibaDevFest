@@ -46,7 +46,7 @@ public class PokemonDispatcher {
 
 	private Connection createConnection() throws IOException {
 		ConnectionFactory factory = new ConnectionFactory();
-	    factory.setHost(SetupConstants.getInstance().getHost());
+	    factory.setHost("192.168.53.116");
 	    factory.setPort(Integer.valueOf(SetupConstants.getInstance().getPort()).intValue());
 	    Connection connection = factory.newConnection();
 		return connection;
@@ -55,7 +55,7 @@ public class PokemonDispatcher {
 	private Channel createChannel(Connection connection) throws IOException {
 		Channel channel = connection.createChannel();
 		for (int i = 0; i < StringUtils.QUEUE_POKEMONS.length; i++) {
-			 channel.queueDeclare(StringUtils.QUEUE_POKEMONS[i], false, false, false, null);
+			 channel.queueDeclare(StringUtils.QUEUE_POKEMONS[i], true, false, false, null);
 		}	   
 		return channel;
 	}

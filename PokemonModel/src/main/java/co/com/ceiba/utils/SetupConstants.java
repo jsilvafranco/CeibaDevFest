@@ -17,7 +17,8 @@ public class SetupConstants {
 	public static SetupConstants getInstance(){
 		if(instance==null){
 			instance = new SetupConstants();
-			instance.loadConfiguration();
+			//instance.loadConfiguration();
+			System.out.println("resources loaded");
 		}
 		return instance;
 	}
@@ -27,7 +28,8 @@ public class SetupConstants {
 			InputStream is = getClass().getClassLoader().getResourceAsStream("settings.properties");	
 			props = new Properties();
 			props.load(is);
-		} catch (FileNotFoundException e) {			
+		} catch (FileNotFoundException e) {
+			System.out.println("error loading properties");
 			e.printStackTrace();
 		} catch (IOException e) {
 			System.exit(0);
@@ -36,11 +38,11 @@ public class SetupConstants {
 	}
 	
 	public  String getHost(){
-		return props.getProperty("host");
+		return "192.168.53.117";
 	}
 	
 	public  String getPort(){
-		return props.getProperty("port");
+		return "5672";
 	}
 	
 }

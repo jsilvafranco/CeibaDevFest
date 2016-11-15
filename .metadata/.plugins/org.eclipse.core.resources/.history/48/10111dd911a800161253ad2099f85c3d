@@ -1,0 +1,6 @@
+#host=10.42.150.136
+host=192.168.53.116
+port=5672
+queues=PokemonQ1,PokemonQ2,PokemonQ3
+publisherThreads=5
+SubscriberThreads=5
